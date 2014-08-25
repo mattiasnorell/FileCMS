@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FriendlyUrlRouteHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Business\ModelBuilders\PageConfigModelBuilder.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Global.asax.cs">
