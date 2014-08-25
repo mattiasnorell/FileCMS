@@ -8,5 +8,6 @@ namespace FileCms.Models
     public abstract class PageBaseModel
     {
         public LayoutModel Layout { get; set; }
+        public UrlPropertyModel Url { get; set; }
     }
 }

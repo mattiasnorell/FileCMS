@@ -132,13 +132,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomFile.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\LayoutModel.cs" />
     <Compile Include="Models\PageBaseModel.cs" />
+    <Compile Include="Models\PageConfig.cs" />
     <Compile Include="Models\PageContentModel.cs" />
+    <Compile Include="Models\UrlPropertyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\DefaultConfig.xml" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Web.config" />

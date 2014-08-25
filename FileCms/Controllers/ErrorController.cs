@@ -22,10 +22,11 @@ namespace FileCms.Controllers
             Response.StatusCode = 404;
             return View(new ErrorModel
                 {
-                    Url = url,
+                    Url = new UrlPropertyModel(url),
                     Layout = new LayoutModel
                     {
-                        HeaderImage = "http://mrwgifs.com/wp-content/uploads/2013/03/James-Van-Der-Beek-Crying-On-Dawsons-Creek-Gif.gif"
+                        HeaderImage = "http://mrwgifs.com/wp-content/uploads/2013/03/James-Van-Der-Beek-Crying-On-Dawsons-Creek-Gif.gif",
+                        Title = "Page not found"
                     }
                 });
         }

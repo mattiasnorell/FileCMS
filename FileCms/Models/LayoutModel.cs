@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using FileCms.Controllers;
 
 namespace FileCms.Models
 {
@@ -9,5 +6,7 @@ namespace FileCms.Models
     {
         public string Title { get; set; }
         public string HeaderImage { get; set; }
+        public CustomFile[] CustomCss { get; set; }
+        public CustomFile[] CustomScripts { get; set; } 
     }
 }

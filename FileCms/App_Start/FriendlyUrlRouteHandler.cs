@@ -38,8 +38,8 @@ namespace FileCms
             {
                 requestContext.RouteData.Values["controller"] = "Page";
                 requestContext.RouteData.Values["action"] = "Index";
-                requestContext.RouteData.Values["path"] = friendlyUrl;
-                requestContext.RouteData.Values["template"] = string.Format("{0}page.html", folderPath);
+                requestContext.RouteData.Values["url"] = friendlyUrl;
+                requestContext.RouteData.Values["pagePath"] = folderPath;
             }
 
             return base.GetHttpHandler(requestContext);
