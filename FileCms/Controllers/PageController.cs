@@ -23,7 +23,7 @@ namespace FileCms.Controllers
 
             return View(new PageContentModel
                 {
-                    Content = templateContent,
+                    Content = new MvcHtmlString(templateContent),
                     Url = pageUrl,
                     Layout = new LayoutModel
                         {

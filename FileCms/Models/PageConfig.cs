@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Xml.Serialization;
 
 namespace FileCms.Models
@@ -7,8 +8,15 @@ namespace FileCms.Models
     [XmlRoot("Config")]
     public class PageConfig
     {
+        private string _header = string.Empty;
+        private string _contentPath = ConfigurationManager.AppSettings["ContentPath"];
+
         public string Title { get; set; }
-        public string Header { get; set; }
+        public string Header
+        {
+            get { return string.Format("{0}{1}", _contentPath, _header); }
+            set { _header = value; }
+        }
 
         [XmlArray("CustomCss")]
         [XmlArrayItem("File", typeof(CustomFile))]

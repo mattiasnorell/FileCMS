@@ -6,11 +6,6 @@ namespace FileCms.Business.ModelBuilders
 {
     public class PageConfigModelBuilder
     {
-        public PageConfigModelBuilder()
-        {
-            
-        }
-
         public PageConfig Build(string configPath)
         {
             if (!File.Exists(configPath))
