@@ -1,4 +1,7 @@
 ﻿
+using System.Collections.Generic;
+using FileCms.Business.ModelBuilders;
+
 namespace FileCms.Models
 {
     public class LayoutModel
@@ -6,6 +9,7 @@ namespace FileCms.Models
         public string Title { get; set; }
         public string HeaderImage { get; set; }
         public CustomFile[] CustomCss { get; set; }
-        public CustomFile[] CustomScripts { get; set; } 
+        public CustomFile[] CustomScripts { get; set; }
+        public IEnumerable<MenuListItem> MenuItems { get; set; }
     }
 }

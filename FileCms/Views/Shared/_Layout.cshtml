@@ -33,6 +33,25 @@
         <a class="btn btn-primary" href="http://www.twitter.com/mrnorell/" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
         <a class="btn btn-primary" href="http://www.instagram.com/mrnorell/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
         <a class="btn btn-primary" href="http://www.github.com/mattiasnorell/" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        <a class="btn btn-primary" href="http://www.ello.co/norell/" target="_blank"><i class="icons ello"></i></a>
+
+        <div class="row" style="padding-top: 20px;">
+            
+            <select onchange="window.location = this.value;">
+                <option value="/">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</option>
+                @foreach (var menuItem in Model.Layout.MenuItems)
+                {
+                    if (menuItem.Active)
+                    {
+                        <option selected value="@menuItem.Url">@menuItem.Text</option>
+                    }
+                    else
+                    {
+                        <option value="@menuItem.Url">@menuItem.Text</option>
+                    }
+                }
+            </select>
+        </div>
     </header>
 
     <div class="container">

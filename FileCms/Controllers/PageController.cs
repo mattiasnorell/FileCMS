@@ -1,4 +1,5 @@
-﻿using FileCms.Business.ModelBuilders;
+﻿using System.Configuration;
+using FileCms.Business.ModelBuilders;
 using FileCms.Models;
 using System;
 using System.Web.Mvc;
@@ -20,17 +21,20 @@ namespace FileCms.Controllers
             var pageUrl = new UrlPropertyModel(url);
             var templateContent = System.IO.File.ReadAllText(templatePath);
             var config = new PageConfigModelBuilder().Build(configPath);
+            var pagePathWithVpp = string.Format("{0}/{1}", ConfigurationManager.AppSettings["ContentPath"], url);
+            var pageContent = new MvcHtmlString(templateContent.Replace("{PAGE_PATH}", pagePathWithVpp));
 
             return View(new PageContentModel
                 {
-                    Content = new MvcHtmlString(templateContent),
+                    Content = pageContent,
                     Url = pageUrl,
                     Layout = new LayoutModel
                         {
                             HeaderImage = config.Header,
                             Title = config.Title,
                             CustomCss = config.CustomCss,
-                            CustomScripts = config.CustomScripts
+                            CustomScripts = config.CustomScripts,
+                            MenuItems = new MenuModelBuilder().Create()
                         }
                 });
         }
