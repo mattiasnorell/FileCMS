@@ -36,18 +36,21 @@
         <a class="btn btn-primary" href="http://www.ello.co/norell/" target="_blank"><i class="icons ello"></i></a>
 
         <div class="row" style="padding-top: 20px;">
-            
+
             <select onchange="window.location = this.value;">
                 <option value="/">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</option>
-                @foreach (var menuItem in Model.Layout.MenuItems)
+                @if (Model.Layout.MenuItems != null)
                 {
-                    if (menuItem.Active)
+                    foreach (var menuItem in Model.Layout.MenuItems)
                     {
-                        <option selected value="@menuItem.Url">@menuItem.Text</option>
-                    }
-                    else
-                    {
-                        <option value="@menuItem.Url">@menuItem.Text</option>
+                        if (menuItem.Active)
+                        {
+                    <option selected value="@menuItem.Url">@menuItem.Text</option>
+                        }
+                        else
+                        {
+                    <option value="@menuItem.Url">@menuItem.Text</option>
+                        }
                     }
                 }
             </select>

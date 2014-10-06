@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FileCms.Business.ModelBuilders;
 using FileCms.Models;
 
 namespace FileCms.Controllers
@@ -26,7 +27,8 @@ namespace FileCms.Controllers
                     Layout = new LayoutModel
                     {
                         HeaderImage = "http://mrwgifs.com/wp-content/uploads/2013/03/James-Van-Der-Beek-Crying-On-Dawsons-Creek-Gif.gif",
-                        Title = "Page not found"
+                        Title = "Page not found",
+                        MenuItems = new MenuModelBuilder().Create()
                     }
                 });
         }

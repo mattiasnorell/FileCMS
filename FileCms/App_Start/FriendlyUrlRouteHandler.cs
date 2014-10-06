@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.IO;
 using System.Web;
+using FileCms.Business.RedirectManager;
 
 namespace FileCms
 {
@@ -30,9 +31,20 @@ namespace FileCms
 
             if (!Directory.Exists(folderPath))
             {
-                requestContext.RouteData.Values["controller"] = "Error";
-                requestContext.RouteData.Values["action"] = "NotFound";
-                requestContext.RouteData.Values["url"] = friendlyUrl;
+                var redirect = new RedirectManager().CheckRedirect(friendlyUrl);
+                if (!string.IsNullOrEmpty(redirect))
+                {
+                    requestContext.HttpContext.Response.Status = "301 Moved Permanently";
+                    requestContext.HttpContext.Response.StatusCode = 301;
+                    requestContext.HttpContext.Response.RedirectPermanent(redirect);
+                    return base.GetHttpHandler(requestContext);
+                }
+                else
+                {
+                    requestContext.RouteData.Values["controller"] = "Error";
+                    requestContext.RouteData.Values["action"] = "NotFound";
+                    requestContext.RouteData.Values["url"] = friendlyUrl;
+                }
             }
             else
             {

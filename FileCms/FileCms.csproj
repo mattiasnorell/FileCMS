@@ -116,8 +116,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FriendlyUrlRouteHandler.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business\Cache\CacheHandler.cs" />
     <Compile Include="Business\ModelBuilders\MenuModelBuilder.cs" />
     <Compile Include="Business\ModelBuilders\PageConfigModelBuilder.cs" />
+    <Compile Include="Business\RedirectManager\RedirectItem.cs" />
+    <Compile Include="Business\RedirectManager\RedirectItems.cs" />
+    <Compile Include="Business\RedirectManager\RedirectManager.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -136,6 +140,7 @@
     <Content Include="Content\DefaultConfig.xml" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Sitepages\redirects.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -153,7 +158,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\" />
-    <Folder Include="Sitepages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
