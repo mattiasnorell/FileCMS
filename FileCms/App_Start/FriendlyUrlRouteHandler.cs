@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.IO;
 using System.Web;
 using FileCms.Business.RedirectManager;
@@ -18,7 +17,7 @@ namespace FileCms
                 friendlyUrl = (string)requestContext.RouteData.Values["FriendlyUrl"];
             };
 
-            var folderPath = HttpContext.Current.Server.MapPath(string.Format("{0}/{1}", contentPath, friendlyUrl));
+            var folderPath = HttpContext.Current.Server.MapPath(string.Format("{0}/Pages/{1}", contentPath, friendlyUrl));
 
             if (!friendlyUrl.EndsWith("/"))
             {
@@ -39,21 +38,19 @@ namespace FileCms
                     requestContext.HttpContext.Response.RedirectPermanent(redirect);
                     return base.GetHttpHandler(requestContext);
                 }
-                else
-                {
-                    requestContext.RouteData.Values["controller"] = "Error";
-                    requestContext.RouteData.Values["action"] = "NotFound";
-                    requestContext.RouteData.Values["url"] = friendlyUrl;
-                }
-            }
-            else
-            {
-                requestContext.RouteData.Values["controller"] = "Page";
-                requestContext.RouteData.Values["action"] = "Index";
+                
+                requestContext.RouteData.Values["controller"] = "Error";
+                requestContext.RouteData.Values["action"] = "NotFound";
                 requestContext.RouteData.Values["url"] = friendlyUrl;
-                requestContext.RouteData.Values["pagePath"] = folderPath;
+                requestContext.RouteData.Values["folderPath"] = HttpContext.Current.Server.MapPath(string.Format("{0}/{1}", contentPath, "ErrorPage")); ;
+                return base.GetHttpHandler(requestContext);
             }
 
+
+            requestContext.RouteData.Values["controller"] = "Page";
+            requestContext.RouteData.Values["action"] = "Index";
+            requestContext.RouteData.Values["url"] = friendlyUrl;
+            requestContext.RouteData.Values["folderPath"] = folderPath;
             return base.GetHttpHandler(requestContext);
         }
     }

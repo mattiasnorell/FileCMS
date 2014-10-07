@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,17 +19,22 @@ namespace FileCms.Controllers
             return View();
         }
 
-        public ActionResult NotFound(string url)
+        public ActionResult NotFound(string url, string folderPath)
         {
+            var contentPath = ConfigurationManager.AppSettings["ContentPath"];
+            var configPath = string.Format("{0}\\config.xml", folderPath);
+            var config = new PageConfigModelBuilder().Build(configPath);
+            var pagePathWithVpp = string.Format("{0}/ErrorPage/", contentPath, url);
+
             Response.StatusCode = 404;
             return View(new ErrorModel
                 {
                     Url = new UrlPropertyModel(url),
                     Layout = new LayoutModel
                     {
-                        HeaderImage = "http://mrwgifs.com/wp-content/uploads/2013/03/James-Van-Der-Beek-Crying-On-Dawsons-Creek-Gif.gif",
-                        Title = "Page not found",
-                        MenuItems = new MenuModelBuilder().Create()
+                        HeaderImage = string.Format("{0}{1}", pagePathWithVpp, config.Header),
+                        Title = config.Title,
+                        MenuItems = new MenuModelBuilder().Create(contentPath)
                     }
                 });
         }

@@ -9,11 +9,10 @@ namespace FileCms.Business.ModelBuilders
 {
     public class MenuModelBuilder
     {
-        public IEnumerable<MenuListItem> Create()
+        public IEnumerable<MenuListItem> Create(string contentPath)
         {
             
-            var rootPath = ConfigurationManager.AppSettings["ContentPath"];
-            var pages = GetDirectories(HttpContext.Current.Server.MapPath(rootPath));
+            var pages = GetDirectories(HttpContext.Current.Server.MapPath(contentPath + "/Pages/"));
             var menuItems = new List<MenuListItem>();
 
             foreach (var page in pages)

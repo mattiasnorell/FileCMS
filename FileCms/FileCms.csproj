@@ -140,7 +140,7 @@
     <Content Include="Content\DefaultConfig.xml" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Sitepages\redirects.xml" />
+    <Content Include="SiteContents\redirects.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

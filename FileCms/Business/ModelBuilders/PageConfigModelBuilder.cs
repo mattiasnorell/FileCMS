@@ -18,6 +18,8 @@ namespace FileCms.Business.ModelBuilders
             var config = (PageConfig)serializer.Deserialize(reader);
             reader.Close();
 
+            config.ConfigPath = configPath;
+
             return config;
         }
     }

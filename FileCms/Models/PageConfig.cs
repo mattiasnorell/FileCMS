@@ -11,10 +11,11 @@ namespace FileCms.Models
         private string _header = string.Empty;
         private string _contentPath = ConfigurationManager.AppSettings["ContentPath"];
 
+        public string ConfigPath { get; set; }
         public string Title { get; set; }
         public string Header
         {
-            get { return string.Format("{0}{1}", _contentPath, _header); }
+            get { return _header; }
             set { _header = value; }
         }
 
