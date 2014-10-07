@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://ftpcluster.loopia.se/mattiasnorell.com/public_html</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>08/26/2014 13:36:02</publishTime>
+    </File>
+    <File Include="bin/FileCms.dll">
+      <publishTime>10/07/2014 16:45:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>08/26/2014 13:36:02</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/10/2012 22:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/10/2012 22:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/10/2012 22:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/26/2014 13:36:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>08/26/2014 13:36:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>08/26/2014 13:36:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/26/2014 13:36:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>08/26/2014 13:36:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>08/26/2014 13:36:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>08/26/2014 13:36:01</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>08/26/2014 13:36:02</publishTime>
+    </File>
+    <File Include="Content/DefaultConfig.xml">
+      <publishTime>08/25/2014 16:04:07</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>10/07/2014 16:27:48</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/25/2014 13:10:58</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/06/2014 16:22:03</publishTime>
+    </File>
+    <File Include="SiteContents/redirects.xml">
+      <publishTime>10/07/2014 16:36:53</publishTime>
+    </File>
+    <File Include="Views/Error/NotFound.cshtml">
+      <publishTime>10/07/2014 09:22:11</publishTime>
+    </File>
+    <File Include="Views/Page/Index.cshtml">
+      <publishTime>08/26/2014 10:07:55</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>08/25/2014 13:10:58</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/07/2014 07:37:27</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>08/25/2014 13:10:58</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>08/25/2014 13:10:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/07/2014 16:45:51</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

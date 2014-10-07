@@ -1,7 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <redirects>
     <redirect>
-        <from>/derp/math-and-cameras/</from>
+        <from>/mattias-norell/</from>
+        <to>/about/</to>
+    </redirect>
+    
+     <redirect>
+        <from>/blog/populate-a-drop-down-list-in-dynamic-content-from-appsettings/</from>
+        <to>/populate-a-drop-down-list-in-dynamic-content-from-appsettings/</to>
+    </redirect>
+
+    <redirect>
+        <from>/play/math-and-cameras/</from>
         <to>/math-and-cameras/</to>
+    </redirect>
+    
+    <redirect>
+        <from>/play/pc-load-letter/</from>
+        <to>/pc-load-letter/</to>
+    </redirect>
+    
+    <redirect>
+        <from>/blog/send-sms-from-a-raspberry-pi/</from>
+        <to>/send-sms-from-a-raspberry-pi/</to>
+    </redirect>
+    
+    <redirect>
+        <from>/blog/update-loopiadns-using-perl/</from>
+        <to>/update-loopiadns-using-perl/</to>
+    </redirect>
+    
+    <redirect>
+        <from>/blog/google-maps-geocode-jquery-style/</from>
+        <to>/google-maps-geocode/</to>
     </redirect>
 </redirects>
