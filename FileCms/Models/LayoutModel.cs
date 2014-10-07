@@ -11,5 +11,6 @@ namespace FileCms.Models
         public CustomFile[] CustomCss { get; set; }
         public CustomFile[] CustomScripts { get; set; }
         public IEnumerable<MenuListItem> MenuItems { get; set; }
+        public SiteConfig SiteConfig { get; set; }
     }
 }

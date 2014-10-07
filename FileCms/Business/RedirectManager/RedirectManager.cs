@@ -1,4 +1,4 @@
-﻿using System;
+﻿using FileCms.Business.Cache;
 using System.Configuration;
 using System.IO;
 using System.Linq;
@@ -11,12 +11,23 @@ namespace FileCms.Business.RedirectManager
     {
         public RedirectItems Get()
         {
+
+            var cacheManager = new CacheHandler();
+            var redirectCache = cacheManager.Get<RedirectItems>("redirectItems");
+
+            if (redirectCache != null)
+            {
+                return redirectCache;
+            }
+
             var root = ConfigurationManager.AppSettings["ContentPath"];
             var reader = new StreamReader(HttpContext.Current.Server.MapPath(root + "/redirects.xml"));
             var xRoot = new XmlRootAttribute {ElementName = "redirects", IsNullable = true};
             var serializer = new XmlSerializer(typeof(RedirectItems), xRoot);
             var redirects = (RedirectItems)serializer.Deserialize(reader);
             reader.Close();
+
+            cacheManager.Add("redirectItems", redirects);
 
             return redirects;
         }

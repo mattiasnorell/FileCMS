@@ -35,7 +35,8 @@ namespace FileCms.Controllers
                             Title = config.Title,
                             CustomCss = config.CustomCss,
                             CustomScripts = config.CustomScripts,
-                            MenuItems = new MenuModelBuilder().Create(contentPath)
+                            MenuItems = new MenuModelBuilder().Create(contentPath),
+                            SiteConfig = new SiteConfigModelBuilder().Create(Server.MapPath(string.Format("{0}/SiteConfig.xml", contentPath)))
                         }
                 });
         }
