@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using FileCms.Business.ModelBuilders;
+﻿using FileCms.Business.ModelBuilders;
 using FileCms.Models;
+using System.Configuration;
+using System.Web.Mvc;
 
 namespace FileCms.Controllers
 {
@@ -34,7 +30,8 @@ namespace FileCms.Controllers
                     {
                         HeaderImage = string.Format("{0}{1}", pagePathWithVpp, config.Header),
                         Title = config.Title,
-                        MenuItems = new MenuModelBuilder().Create(contentPath)
+                        MenuItems = new MenuModelBuilder().Create(contentPath),
+                        SiteConfig = new SiteConfigModelBuilder().Create(Server.MapPath(string.Format("{0}/SiteConfig.xml", contentPath)))
                     }
                 });
         }
