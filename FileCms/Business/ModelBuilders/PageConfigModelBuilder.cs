@@ -6,8 +6,10 @@ namespace FileCms.Business.ModelBuilders
 {
     public class PageConfigModelBuilder
     {
-        public PageConfig Build(string configPath)
+        public PageConfig Build(string folderPath)
         {
+            var configPath = string.Format("{0}\\config.xml", folderPath);
+
             if (!File.Exists(configPath))
             {
                 return new PageConfig();

@@ -1,8 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <redirects>
     <redirect>
+        <from>/blog/</from>
+        <to>/</to>
+    </redirect>
+
+    <redirect>
+        <from>/work/</from>
+        <to>/</to>
+    </redirect>
+ 
+   <redirect>
+        <from>/play/</from>
+        <to>/</to>
+    </redirect>
+
+    <redirect>
         <from>/mattias-norell/</from>
         <to>/about/</to>
+    </redirect>
+
+    <redirect>
+        <from>/blog/bambuser-for-wordpress/</from>
+        <to>/</to>
     </redirect>
     
      <redirect>

@@ -1,0 +1,9 @@
+﻿<section class="container">
+    <h1>Google Maps geocode</h1>
+
+    <p>Most of the time when I need to include a Google Map the static or iFrame API is good enough but they both have their pros and cons. This time we needed to include multiple maps 940 times 250 pixles in size. Our first aproach was the static map API but they only, for none premium users, allow maps less than 640 times 640 pixles so that was a dead end. We then tried the iFrame but that, for some reason, made the page stutter at page load so we decided to write our own implementation. Just to make it a little more useful in the form of a jQuery plugin.</p>
+    <p>The thing is, there are a lot of jQuery plugins that do geocode, but most of them are close to complete frameworks for the Google Maps API. That is good if you need the entire API which we in this, and most other cases, don't. It just add unecessery data for the client to download. That beeing said, this plugin does one thing and one thing only, it geocode the address and load the Google Map. Nothing fancy, no rocket science, yet it does exactly what we need.</p>
+    <p>And one more thing, the plugin check if the Google Maps API has already been loaded, if not it loads the API from Googles server. What a treat, right?</p>
+
+    <script src="https://gist.github.com/mattiasnorell/8c58754cf511f7deaa22.js"></script>
+</section>

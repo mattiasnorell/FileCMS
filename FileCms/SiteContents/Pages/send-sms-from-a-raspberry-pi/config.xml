@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+    <Title>Send SMS from a Raspberry Pi</Title>
+    <Header>raspberry-pi.jpg</Header>
+    <CustomCss>
+        <File/>
+    </CustomCss>
+    <CustomScripts>
+        <File/>
+    </CustomScripts>
+</Config>

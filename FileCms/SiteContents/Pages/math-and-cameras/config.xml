@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+    <Title>Math and cameras</Title>
+    <Header>header.jpg</Header>
+    <CustomCss>
+        <File/>
+    </CustomCss>
+    <CustomScripts>
+        <File>
+		<Path>http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js</Path>
+	        <Type>text/javascript</Type>
+	</File>
+    </CustomScripts>
+</Config>

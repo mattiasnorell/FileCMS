@@ -9,6 +9,7 @@ namespace FileCms
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/Content/js").Include("~/Content/site.js"));
         }
     }
 }

@@ -17,8 +17,10 @@ namespace FileCms.Business.ModelBuilders
 
             foreach (var page in pages)
             {
-                var configPath = string.Format("{0}\\config.xml", page);
-                var config = new PageConfigModelBuilder().Build(configPath);
+                var config = new PageConfigModelBuilder().Build(page);
+
+                if(config.VisibleInMenu == false) continue;
+                
                 var url = string.Format("/{0}/", Path.GetFileName(page));
 
                 menuItems.Add(new MenuListItem

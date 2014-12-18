@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+    <Title>Me me me me!</Title>
+    <Header>header.jpg</Header>
+    <CustomCss>
+        <File/>
+    </CustomCss>
+    <CustomScripts>
+        <File/>
+    </CustomScripts>
+</Config>

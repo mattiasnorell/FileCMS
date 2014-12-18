@@ -1,0 +1,11 @@
+﻿<section class="container">
+    <h1>Update LoopiaDNS using Perl</h1>
+    <p class="intro">Why do things manually that can be done automatically?</p>
+
+    <p>I have a small server at home for subversion, some websites and a few other stuff. Since I don't have a static IP-adress I sometimes have to update the domainname pointing to my server. I host all my domains at Loopia and updating the DNS is quite easy using their control panel, but still, it has to be done manualy which sucks since I want to turn the server on and everything should just work.</p>
+    <p>Luckily Loopia got a pretty good API for working with their DNS-service and one of the methods is "updateZoneRecord" which is exactly what I want my server too do.</p>
+    <p>The script below is my "proof-of-concept"-script. The one on my server got a few more "do this in case something goes to hell" and a method that first check if the servers current IP is different from the one the domain is pointing too. But it's a good start.&nbsp;</p>
+    <p>My server (a Raspberry Pi) is running Rasbian, a Debian port, and adding this script to&nbsp;<span>/etc/init.d/ will make it run att boot time.&nbsp;</span></p>
+
+    <script src="https://gist.github.com/mattiasnorell/9a4603188c319bf268cd.js"></script>
+</section>

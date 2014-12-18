@@ -14,60 +14,62 @@
     {
         foreach (var style in Model.Layout.CustomCss)
         {
-        <link href="@style.Path" type="@style.Type" rel="stylesheet">
+            <link href="@style.Path" type="@style.Type" rel="stylesheet">
         }
     }
 
 </head>
 <body>
+    <section id="menu">
+        <div class="container">
+            <div class="row">
+                <i id="menu-close" class="fa fa-times fa-2x"></i>
+            </div>
+
+            @if (Model.Layout.MenuItems != null && Model.Layout.MenuItems.Any())
+            {
+                foreach (var menuItem in Model.Layout.MenuItems)
+                {
+
+                    if (menuItem.Active)
+                    {
+                        <a href="@menuItem.Url" class="active">@menuItem.Text</a>
+                    }
+                    else
+                    {
+                        <a href="@menuItem.Url">@menuItem.Text</a>
+                    }
+                }
+
+            }
+        </div>
+    </section>
+    
+    <div id="menu-holder">
+        <i id="menu-open" class="fa fa-bars fa-2x"></i>
+    </div>
+
     <header>
+        
+
         @if (Model.Layout.HeaderImage != null)
         {
             <div id="header-background">
-                <img src="@Model.Layout.HeaderImage"/>
+                <img src="@Model.Layout.HeaderImage" />
             </div>
         }
 
-        <p class="headline"><a href="/">Code and rants</a></p>
-        <h3>A wannabe designer who fell in love with writing code</h3>
+        <p class="headline"><a href="/">@Model.Layout.SiteConfig.Definition.Name</a></p>
+        <h3>@Model.Layout.SiteConfig.Definition.Description</h3>
         <a class="btn btn-primary" href="http://www.twitter.com/mrnorell/" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
         <a class="btn btn-primary" href="http://www.instagram.com/mrnorell/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
         <a class="btn btn-primary" href="http://www.github.com/mattiasnorell/" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-        <a class="btn btn-primary" href="http://www.ello.co/norell/" target="_blank"><i class="icons ello"></i></a>
 
-        @if (Model.Layout.MenuItems != null && Model.Layout.MenuItems.Any())
-        {
-            <div class="row" style="padding-top: 20px;">
-
-                <select onchange="window.location = this.value;">
-                    <option value="/">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</option>
-
-                    @foreach (var menuItem in Model.Layout.MenuItems)
-                    {
-                        if (menuItem.Active)
-                        {
-                        <option selected value="@menuItem.Url">@menuItem.Text</option>
-                        }
-                        else
-                        {
-                        <option value="@menuItem.Url">@menuItem.Text</option>
-                        }
-                    }
-
-                </select>
-            </div>
-        }
     </header>
 
-    <div class="container">
-        <section>
-            @RenderBody()
-        </section>
+    <div id="main-content" class="container">
+        @RenderBody()
     </div>
-
-    <footer>
-        <a><i class="fa fa-arrow-circle-up fa-3x"></i></a>
-    </footer>
 
     @RenderSection("scripts", required: false)
 
@@ -75,10 +77,10 @@
     {
         foreach (var script in Model.Layout.CustomScripts)
         {
-        <script type="@script.Type" src="@script.Path"></script>
+            <script type="@script.Type" src="@script.Path"></script>
         }
     }
-    
+
     @Model.Layout.SiteConfig.Disqus.Account
 
     @if (Model.Layout.SiteConfig.Analytics != null && Model.Layout.SiteConfig.Analytics.Enable)
@@ -89,7 +91,7 @@
             _gaq.push(['_setAccount', '@Model.Layout.SiteConfig.Analytics.Account']);
             _gaq.push(['_trackPageview']);
 
-            (function() {
+            (function () {
                 var ga = document.createElement('script');
                 ga.type = 'text/javascript';
                 ga.async = true;
@@ -100,5 +102,7 @@
 
         </script>
     }
+    
+    @Scripts.Render("~/Content/js")
 </body>
 </html>

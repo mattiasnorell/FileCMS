@@ -1,0 +1,41 @@
+﻿<section class="container">
+    <h1>Send SMS from a Raspberry Pi</h1>
+    <p class="intro">From one n00b to another</p>
+
+    <p>This is the first in, what I hope will become, a series of tutorials on how to use SMS as a way to play around with the Raspberry Pi. There are quite a few tutorials on how this work but none that&nbsp;I found to explain thing for us who are either new to the world of Debin or don't just want a list of "this is how you do it, now do it". So the following tutorial might be what some people would call bloated and if you are one of those, just jump to the bottom of the post, all steps are there in a neat, short list. That beeing said, here we go.</p>
+    <h2>Hardware (and a little heads up)</h2>
+    <p>I'm using a Raspberry Pi Model B (256 mb), a Huawei e173 3G-modem and a prepaid sim card. From what I've read the Huawei modems are sort of the go to modem when it comes to this kind of things since they tend to "just work". But as always, "just work" are pretty big words and I haven't tried any other brand or models so if you have problems with connecting the modem to the Raspberry, please don't ask me, I will most likley confuse you more than help.</p>
+    <p>To see if your modem is connected type <em><strong>lsusb </strong></em>and you should see a list of devices, including your modem. If it doesn't show up, try to remove and then connect the modem, wait a few seconds and run lsusb again. If that doesn't work, try the Windows way of solving things, restart the computer with the modem plugged in.</p>
+    <h2>Install Gammu</h2>
+    <p>There are a few different applications to use for sending text messages. I use Gammu. There might be better applications for just sending text messages (Gammu can do much more) but it's pretty simple to set up and get started with, so for a beginner (me) it's perfect. What Gammu does is provide us with the necessery functions to communicate with the modem and send messages.&nbsp;Since the keywords here are "simple" and "beginner" we don't go down the "download and compile source code while getting a few grey hairs"-route, we use APT.</p>
+    <p>To begin this little adventure, install the application, <strong><em>sudo apt-get install gammu</em></strong>.&nbsp;</p>
+    <h2>Configuration</h2>
+    <p>Next we need to configure the Gammu. This can, for someone new to Debian, be a little "what the hell?" since we need to find out on what port the modem is connected. What we want to do is list all devices that might be connected to the usb-ports. Using the command <strong><em>dmesg | grep ttyUSB</em></strong> will generate a list of all connected devices, and hopefully the modem. For me the port is ttyUSB0.</p>
+    <p>Enter <em><strong>sudo gammu-config</strong></em> to open the configuration for Gammu. All I had to change was the port to /dev/ttyUSB0, connection to at19200 and then save. Now we should have a working Gammu installed. To see if Gammu is working and able to communicate with your modem enter <strong><em>sudo gammu --identify</em></strong> and Gammu should after a few seconds return some information about the modem.</p>
+    <p>If it says something like "This is your device" and not "Shit hit the fan and something went wrong" you are ready to send your first Raspberry Pi text message! Enter <strong><em>echo "Test" | sudo gammu sendsms TEXT **********</em></strong> where ********** is your phone number and press enter. Gammu will now work for a couple of seconds and your phone should go *pling*.</p>
+    <h2>Wrap up</h2>
+    <p>There are of course a lot more to cover when it comes to the subject of sms on the Pi. At the begining of this post I wrote that this might become a series of tutorials. Now, at the end, I'm begining to realize that is a great idea. Mostly because I want to learn more about this and too be honest, if you were able to send messages using this tutorial we are pretty much on the same page. So what ever I learn I will share here and hopefully we can learn some sweet Pi stuff together.</p>
+    <p>Read <a href="/receive-sms-on-a-raspberry-pi/">the next part</a> if you want learn how to receive messages and if you have any questions or just wanna say hi do so on <a title="http://www.twitter.com/mrnorell/" href="http://www.twitter.com/mrnorell/" target="_blank">Twitter</a>.</p>
+    <h2>All steps. In a list. Short and sweet.</h2>
+    <ol>
+        <li>sudo apt-get install gammu</li>
+        <li>sudo gammu-config</li>
+        <li>
+            I'm using the following settings:
+            <ul>
+                <li>Port: /dev/ttyUSB0</li>
+                <li>Connection: at19200</li>
+                <li>Model: empty</li>
+                <li>Synchronize time: yes</li>
+                <li>Log file: leave empty</li>
+                <li>Log format: nothing</li>
+                <li>Use locking: leave empty</li>
+                <li>Gammu localisation: leave empty</li>
+            </ul>
+        </li>
+        <li>sudo gammu --identify</li>
+        <li>echo "test" | sudo gammu sendsms TEXT **********</li>
+    </ol>
+
+    <div id="disqus_thread" data-identifier="/send-sms-from-a-raspberry-pi/" data-title="Send SMS from a Raspberry Pi" data-url="/send-sms-from-a-raspberry-pi/"></div>
+</section>

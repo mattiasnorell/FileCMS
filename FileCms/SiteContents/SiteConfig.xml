@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <site>
-  <analytics>
-    <enable>false</enable>
-    <account>UA-4434342-2</account>
-  </analytics>
-  <disqus>
-    <account></account>
-  </disqus>
+    <definition>
+        <name>Code and rants</name>
+        <description>A wannabe designer who fell in love with writing code</description>
+    </definition>
+    <analytics>
+        <enable>false</enable>
+        <account>UA-4434342-2</account>
+    </analytics>
+    <disqus>
+        <account>mattiasnorell</account>
+    </disqus>
 </site>

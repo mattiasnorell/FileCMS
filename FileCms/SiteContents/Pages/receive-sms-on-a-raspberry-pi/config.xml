@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+    <Title>Receive SMS on a Raspberry Pi</Title>
+    <Header>raspberry-huawei.jpg</Header>
+    <CustomCss />
+    <CustomScripts/>
+</Config>

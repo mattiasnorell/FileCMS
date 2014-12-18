@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+    <Title>Google maps geocode</Title>
+    <Header>header.jpg</Header>
+    <CustomCss>
+        <File/>
+    </CustomCss>
+    <CustomScripts>
+        <File/>
+    </CustomScripts>
+</Config>

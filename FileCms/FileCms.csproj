@@ -140,9 +140,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\DefaultConfig.xml" />
+    <Content Include="Content\site.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="SiteContents\redirects.xml" />
+    <Content Include="SiteContents\ErrorPage\config.xml" />
+    <Content Include="SiteContents\ErrorPage\James-Van-Der-Beek-Crying-On-Dawsons-Creek-Gif.gif" />
+    <Content Include="SiteContents\Pages\about\config.xml" />
+    <Content Include="SiteContents\Pages\about\header.jpg" />
+    <Content Include="SiteContents\Pages\about\page.html" />
+    <Content Include="SiteContents\Pages\config.xml" />
+    <Content Include="SiteContents\Pages\google-maps-geocode\config.xml" />
+    <Content Include="SiteContents\Pages\google-maps-geocode\header.jpg" />
+    <Content Include="SiteContents\Pages\google-maps-geocode\page.html" />
+    <Content Include="SiteContents\Pages\math-and-cameras\config.xml" />
+    <Content Include="SiteContents\Pages\math-and-cameras\header.jpg" />
+    <Content Include="SiteContents\Pages\math-and-cameras\mathandcameras.swf" />
+    <Content Include="SiteContents\Pages\math-and-cameras\page.html" />
+    <Content Include="SiteContents\Pages\page.html" />
+    <Content Include="SiteContents\Pages\pc-load-letter\config.xml" />
+    <Content Include="SiteContents\Pages\pc-load-letter\header.jpg" />
+    <Content Include="SiteContents\Pages\pc-load-letter\page.html" />
+    <Content Include="SiteContents\Pages\populate-a-drop-down-list-in-dynamic-content-from-appsettings\config.xml" />
+    <Content Include="SiteContents\Pages\populate-a-drop-down-list-in-dynamic-content-from-appsettings\page.html" />
+    <Content Include="SiteContents\Pages\receive-sms-on-a-raspberry-pi\config.xml" />
+    <Content Include="SiteContents\Pages\receive-sms-on-a-raspberry-pi\page.html" />
+    <Content Include="SiteContents\Pages\receive-sms-on-a-raspberry-pi\raspberry-huawei.jpg" />
+    <Content Include="SiteContents\Pages\receive-sms-on-a-raspberry-pi\raspberry-pi.jpg" />
+    <Content Include="SiteContents\Pages\send-sms-from-a-raspberry-pi\config.xml" />
+    <Content Include="SiteContents\Pages\send-sms-from-a-raspberry-pi\page.html" />
+    <Content Include="SiteContents\Pages\send-sms-from-a-raspberry-pi\raspberry-pi.jpg" />
+    <Content Include="SiteContents\Pages\update-loopiadns-using-perl\config.xml" />
+    <Content Include="SiteContents\Pages\update-loopiadns-using-perl\page.html" />
+    <Content Include="SiteContents\redirects.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="SiteContents\SiteConfig.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -161,7 +192,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\" />
-    <Folder Include="SiteContents\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

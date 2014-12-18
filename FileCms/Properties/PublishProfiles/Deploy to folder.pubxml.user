@@ -13,7 +13,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2014 13:36:02</publishTime>
     </File>
     <File Include="bin/FileCms.dll">
-      <publishTime>10/08/2014 09:18:13</publishTime>
+      <publishTime>10/08/2014 09:53:45</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>08/26/2014 13:36:02</publishTime>
@@ -66,6 +66,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="SiteContents/redirects.xml">
       <publishTime>10/07/2014 16:36:53</publishTime>
     </File>
+    <File Include="SiteContents/SiteConfig.xml">
+      <publishTime>10/08/2014 09:51:36</publishTime>
+    </File>
     <File Include="Views/Error/NotFound.cshtml">
       <publishTime>10/07/2014 09:22:11</publishTime>
     </File>
@@ -76,7 +79,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2014 13:10:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/07/2014 07:37:27</publishTime>
+      <publishTime>10/08/2014 09:51:36</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/25/2014 13:10:58</publishTime>
@@ -85,7 +88,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2014 13:10:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/08/2014 09:18:13</publishTime>
+      <publishTime>10/08/2014 09:53:45</publishTime>
     </File>
   </ItemGroup>
 </Project>

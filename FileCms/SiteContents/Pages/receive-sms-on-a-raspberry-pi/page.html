@@ -1,0 +1,30 @@
+﻿<section class="container">
+    <h1>Receive SMS on a Raspberry Pi</h1>
+    <p class="intro">Because just sending stuff ain’t that fun</p>
+
+    <p>A while ago <a href="/send-sms-from-a-raspberry-pi/">I wrote a tutorial on how to send sms from a Raspberry Pi using a 3G-dongle</a>. If you need help setting up Gammu, read that one first and then come back here.</p>
+    <p>If you just want to receive messages all you need to do is install Gammu, type sudo gammu getallsms and Gammu will list all messages on the sim card. If you just want just a few messages use sudo gammu getsms 0 1 where zero is the start position and one is how many messages you want to see.</p>
+    <h2>It works, but it’s not really useful. </h2>
+    <p>The best way to do things automatically is by using the Gammu daemon. The daemon can, when a message is received, run a program or shell script. First install the daemon, <em><strong>sudo apt-get install gammu-smsd</strong></em> and update the config file which is by default located in /etc/.Type <em><strong>sudo nano /etc/gammu-smsdrc</strong></em> and add <em><strong>RunOnReceive = PATH_TO_SCRIPT</strong></em> under [smds]. Now just type <em><strong>sudo gammu-smsd</strong></em> to start the daemon. Remember, the shell script must have execute permissions.Add this with <em><strong>chmod u+rwx PATH_TO_FILE</strong></em>. Also remember that this can, depending on what the script does, mess with your Pi. So use with caution.</p>
+
+    <h2>Basic example</h2>
+    <p>This script will return the string “Hello world!” to the number from which you sent the message to the Raspberry.</p>
+    <script src="https://gist.github.com/mattiasnorell/f35a40df816ce745186c.js"></script>
+
+    <h2>Ping pong</h2>
+    <p>You might want the script to do different things depending on the message. In this case, if we text “Ping” the script will return “Pong!”.</p>
+    <script src="https://gist.github.com/mattiasnorell/82730468706da9b7e9d6.js"></script>
+
+    <h2>Shutdown</h2>
+    <p>We can do pretty much what ever a shell script is allowed to do, like shutting down the Pi.</p>
+    <script src="https://gist.github.com/mattiasnorell/6433ad169bdb6a2b892d.js"></script>
+
+    <h2>Redirect SMS</h2>
+    <p>I recently got a new phone number and to make sure people don’t send messages to my old number I wrote the script below to redirect their messages to my new number. If the message is too long it will cut it short but it will still send the important part, their phone number and a part of what they wanted to tell me.</p>
+    <script src="https://gist.github.com/mattiasnorell/246474c460ef01654642.js"></script>
+
+    <h2>Wrap up</h2>
+    <p>As you see it’s not very hard to receive messages and do things with them. This was a very basic "start here, learn more later"-tutorial but I hope it will help you learn as much as I did writing it.</p>
+
+    <div id="disqus_thread" data-identifier="/receive-sms-on-a-raspberry-pi/" data-title="Receive SMS on a Raspberry Pi" data-url="/receive-sms-on-a-raspberry-pi/"></div>
+</section>

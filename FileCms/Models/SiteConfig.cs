@@ -4,6 +4,9 @@ namespace FileCms.Models
 {
     public class SiteConfig
     {
+        [XmlElement("definition")]
+        public DefinitionConfig Definition { get; set; }
+
         [XmlElement("analytics")]
         public AnalyticsConfig Analytics { get; set; }
 
@@ -23,5 +26,13 @@ namespace FileCms.Models
         public bool Enable { get; set; }
         [XmlElement("account")]
         public string Account { get; set; }
+    }
+
+    public class DefinitionConfig
+    {
+        [XmlElement("name")]
+        public string Name { get; set; }
+        [XmlElement("description")]
+        public string Description { get; set; }
     }
 }

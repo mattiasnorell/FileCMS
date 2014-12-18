@@ -11,7 +11,6 @@ namespace FileCms.Controllers
         public ActionResult Index(string url, string folderPath)
         {
             var templatePath = string.Format("{0}page.html", folderPath);
-            var configPath = string.Format("{0}config.xml", folderPath);
             var contentPath = ConfigurationManager.AppSettings["ContentPath"];
             var pagePathWithVpp = string.Format("{0}/Pages/{1}", contentPath, url);
 
@@ -21,7 +20,7 @@ namespace FileCms.Controllers
             }
 
             var pageUrl = new UrlPropertyModel(url);
-            var config = new PageConfigModelBuilder().Build(configPath);
+            var config = new PageConfigModelBuilder().Build(folderPath);
             var templateContent = System.IO.File.ReadAllText(templatePath);
             var pageContent = new MvcHtmlString(templateContent.Replace("{PAGE_PATH}", pagePathWithVpp));
 
