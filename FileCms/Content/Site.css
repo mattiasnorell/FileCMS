@@ -222,7 +222,7 @@ footer {
 
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
     #menu-open {
         right: 10px;
         top: 10px;
@@ -231,15 +231,49 @@ footer {
     #menu-holder {
         background-color: #000;
         background-color: rgba(0, 0, 0, .3);
+
     }
 
     #menu a {
         font-size: 18px;
         padding-left: 40px;
+        padding-right: 40px;
         color: #ccc;
     }
 
     #menu a:hover {
         padding-left: 40px;
+    }
+
+    header p.headline {
+        font-size: 65px;
+        margin: 90px 0 0 0;
+    }
+
+    #main-content {
+        margin-top: 340px;
+    }
+
+    div.container section {
+        padding: 65px 20px 35px 20px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    header p.headline {
+        font-size: 32px;
+        margin: 90px 0 0 0;
+    }
+
+    header h3 {
+        font-size: 14px;
+    }
+
+    #main-content {
+        margin-top: 0px;
+    }
+
+    div.container section h1 {
+        font-size: 24px;
     }
 }

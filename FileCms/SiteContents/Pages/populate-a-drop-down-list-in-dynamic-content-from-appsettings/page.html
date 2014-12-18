@@ -1,7 +1,9 @@
-﻿<h1>Populate a drop down list in dynamic content from AppSettings</h1>
-<p class="intro">How to make dynamic content in EPiServer CMS 7 like PropertyDropDownList  populated from AppSettings.</p>
+﻿<section class="container">
+    <h1>Populate a drop down list in dynamic content from AppSettings</h1>
+    <p class="intro">How to make dynamic content in EPiServer CMS 7 like PropertyDropDownList  populated from AppSettings.</p>
 
-<p>As of EPiServer CMS 7.1 dynamic content is still based on the "old" CMS 6 way of doing things. That means&nbsp;(as far as I know) no real MVC-support. You can still use them in MVC projects but with a few do's and don't. One thing I found especially hard to do was populate a&nbsp;PropertyDropDownList from a value set in AppSettings. In "normal" page type models UIHint is used as a way to make EPi generate the drop down, but when it comes to dynamic properties we simply can't do that since they are running in, let's call it legacy mode. So, we have to create a custom property that do all the AppSettings stuff for us.</p>
-<p>There's really no super awesome h4xx0r advanced stuff involved, just two classes that extend&nbsp;PropertyDropDownList and&nbsp;PropertyDropDownListControl. To initiate the custom property all we have to do is create a new instance of&nbsp;PropertyAppSettingsDropDownList and set the property "AppSetting" to the value we want to use.</p>
+    <p>As of EPiServer CMS 7.1 dynamic content is still based on the "old" CMS 6 way of doing things. That means&nbsp;(as far as I know) no real MVC-support. You can still use them in MVC projects but with a few do's and don't. One thing I found especially hard to do was populate a&nbsp;PropertyDropDownList from a value set in AppSettings. In "normal" page type models UIHint is used as a way to make EPi generate the drop down, but when it comes to dynamic properties we simply can't do that since they are running in, let's call it legacy mode. So, we have to create a custom property that do all the AppSettings stuff for us.</p>
+    <p>There's really no super awesome h4xx0r advanced stuff involved, just two classes that extend&nbsp;PropertyDropDownList and&nbsp;PropertyDropDownListControl. To initiate the custom property all we have to do is create a new instance of&nbsp;PropertyAppSettingsDropDownList and set the property "AppSetting" to the value we want to use.</p>
 
-<script src="https://gist.github.com/mattiasnorell/d7bdc9347c5d968f4569.js"></script>
+    <script src="https://gist.github.com/mattiasnorell/d7bdc9347c5d968f4569.js"></script>
+</section>
