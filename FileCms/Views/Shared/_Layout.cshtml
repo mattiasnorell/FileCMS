@@ -44,13 +44,13 @@
             }
         </div>
     </section>
-    
+
     <div id="menu-holder">
         <i id="menu-open" class="fa fa-bars fa-2x"></i>
     </div>
 
     <header>
-        
+
 
         @if (Model.Layout.HeaderImage != null)
         {
@@ -81,6 +81,18 @@
         }
     }
 
+    @if (Model.Layout.SiteConfig.Disqus != null && !string.IsNullOrEmpty(Model.Layout.SiteConfig.Disqus.Account))
+    {
+        <script type="text/javascript">
+            var disqus_shortname = '@Model.Layout.SiteConfig.Disqus.Account';
+            (function () {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+    }
+
     @if (Model.Layout.SiteConfig.Analytics != null && Model.Layout.SiteConfig.Analytics.Enable)
     {
         <script type="text/javascript">
@@ -100,7 +112,7 @@
 
         </script>
     }
-    
+
     @Scripts.Render("~/Content/js")
 </body>
 </html>
