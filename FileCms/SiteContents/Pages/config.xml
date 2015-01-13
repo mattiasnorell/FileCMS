@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Config>
-    <Title>PC Load Letter</Title>
-    <Header>/pc-load-letter/header.jpg</Header>
+    <Title>mattiasnorell.com</Title>
+    <Header></Header>
     <CustomCss>
         <File/>
     </CustomCss>

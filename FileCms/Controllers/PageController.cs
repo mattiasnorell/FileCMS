@@ -30,7 +30,7 @@ namespace FileCms.Controllers
                     Url = pageUrl,
                     Layout = new LayoutModel
                         {
-                            HeaderImage = string.Format("{0}{1}", pagePathWithVpp, config.Header),
+                            HeaderImage = string.IsNullOrEmpty(config.Header) ? null : string.Format("{0}{1}", pagePathWithVpp, config.Header),
                             Title = config.Title,
                             CustomCss = config.CustomCss,
                             CustomScripts = config.CustomScripts,

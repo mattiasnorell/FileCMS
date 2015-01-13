@@ -46,28 +46,16 @@
     </section>
 
     <div id="menu-holder">
+        <a href="/"><i id="home-icon" class="fa fa-home fa-2x"></i></a>
         <i id="menu-open" class="fa fa-bars fa-2x"></i>
     </div>
 
-    <header>
-
-
-        @if (Model.Layout.HeaderImage != null)
+    <div id="main-content" class="container">
+        @if (!string.IsNullOrEmpty(Model.Layout.HeaderImage))
         {
-            <div id="header-background">
-                <img src="@Model.Layout.HeaderImage" />
-            </div>
+            <img id="header-image" src="@Model.Layout.HeaderImage" />
         }
 
-        <p class="headline"><a href="/">@Model.Layout.SiteConfig.Definition.Name</a></p>
-        <h3>@Model.Layout.SiteConfig.Definition.Description</h3>
-        <a class="btn btn-primary" href="http://www.twitter.com/mrnorell/" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-        <a class="btn btn-primary" href="http://www.instagram.com/mrnorell/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
-        <a class="btn btn-primary" href="http://www.github.com/mattiasnorell/" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-
-    </header>
-
-    <div id="main-content" class="container">
         @RenderBody()
     </div>
 
