@@ -6,9 +6,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@Model.Layout.Title</title>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
-    @Styles.Render("~/Content/css")
+    
+    @if (Model.Layout.SiteConfig.Styles != null)
+    {
+        foreach (var style in Model.Layout.SiteConfig.Styles)
+        {
+            <link href="@style.Path" type="text/css" rel="stylesheet">
+        }
+    }
 
     @if (Model.Layout.CustomCss != null)
     {
@@ -51,15 +56,18 @@
     </div>
 
     <div id="main-content" class="container">
-        @if (!string.IsNullOrEmpty(Model.Layout.HeaderImage))
-        {
-            <img id="header-image" src="@Model.Layout.HeaderImage" />
-        }
-
         @RenderBody()
     </div>
 
     @RenderSection("scripts", required: false)
+
+    @if (Model.Layout.SiteConfig.Scripts != null)
+    {
+        foreach (var script in Model.Layout.SiteConfig.Scripts)
+        {
+            <script type="text/javascript" src="@script.Path"></script>
+        }
+    }
 
     @if (Model.Layout.CustomScripts != null)
     {
@@ -101,6 +109,6 @@
         </script>
     }
 
-    @Scripts.Render("~/Content/js")
 </body>
+
 </html>

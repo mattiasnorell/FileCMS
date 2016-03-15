@@ -10,7 +10,7 @@
     margin-top: 120px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #f5f5f5;
+    background-color: rgba(255,255,255,.3);
 }
 
 #menu-holder {
@@ -43,6 +43,14 @@
     z-index: 99;
 }
 
+.blur-element {
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}
+
 #menu .row {
     text-align: center;
     margin-top: 50px;
@@ -55,7 +63,8 @@
     left: 0;
     width: 100%;
     height: 0;
-    background-color: #080808;
+    background-color: #000;
+    background-color: rgba(0,0,0,.9);
     overflow: auto;
     -webkit-transition: height .3s; /* For Safari 3.1 to 6.0 */
     transition: height .3s;
@@ -184,21 +193,23 @@ div.container section {
 }
 
     div.container section h1 {
-        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        text-align: left;
         color: #333;
         font-size: 36px;
         margin-bottom: 0;
     }
 
     div.container section h2 {
-        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        text-align: left;
         color: #000;
         font-size: 28px;
         margin: 36px 0 0 0;
     }
 
     div.container section p.intro {
-        text-align: center;
+        text-align: left;
         font-size: 22px;
         margin-top: 12px;
         margin-bottom: 36px;
@@ -267,6 +278,7 @@ footer {
 
     #main-content {
         margin-top: 340px;
+       
     }
 
     div.container section {

@@ -1,4 +1,6 @@
-﻿using System.Xml.Serialization;
+﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Xml.Serialization;
 
 namespace FileCms.Models
 {
@@ -12,6 +14,14 @@ namespace FileCms.Models
 
         [XmlElement("disqus")]
         public DisqusConfig Disqus { get; set; }
+
+        [XmlArray("styles")]
+        [XmlArrayItem("File", typeof(CustomFile))]
+        public List<CustomFile> Styles { get; set; }
+
+        [XmlArray("scripts")]
+        [XmlArrayItem("File", typeof(CustomFile))]
+        public List<CustomFile> Scripts { get; set; }
     }
 
     public class DisqusConfig

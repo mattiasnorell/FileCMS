@@ -1,14 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <site>
-    <definition>
-        <name>Code and rants</name>
-        <description>A wannabe designer who fell in love with writing code</description>
-    </definition>
-    <analytics>
-        <enable>false</enable>
-        <account>UA-4434342-2</account>
-    </analytics>
-    <disqus>
-        <account>mattiasnorell</account>
-    </disqus>
+  <definition>
+    <name>Code and rants</name>
+    <description>A wannabe designer who fell in love with writing code</description>
+  </definition>
+  <analytics>
+    <enable>false</enable>
+    <account>UA-4434342-2</account>
+  </analytics>
+  <disqus>
+    <account>mattiasnorell</account>
+  </disqus>
+  <styles>
+    <File>
+      <Path>https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</Path>
+    </File>
+    <File>
+      <Path>http://fonts.googleapis.com/css?family=Droid+Sans:400,700</Path>
+    </File>
+    <File>
+      <Path>https://fonts.googleapis.com/css?family=Montserrat:400,700</Path>
+    </File>
+    <File>
+      <Path>/Content/site.css</Path>
+    </File>
+  </styles>
+  <scripts>
+    <File>
+      <Path>https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js</Path>
+    </File>
+    <File>
+      <Path>/Content/site.js</Path>
+    </File>
+  </scripts>
 </site>

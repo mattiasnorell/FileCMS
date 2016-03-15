@@ -13,9 +13,15 @@ function removeClass(ele, cls) {
     }
 }
 
+
+
+
 document.getElementById("menu-open").onclick = function () {
     document.getElementsByTagName("body")[0].style.overflow = "hidden";
     document.getElementById("menu").style.height = "100%";
+
+    document.getElementById("main-content").classList.add("blur-element");
+    document.getElementById("menu-holder").classList.add("blur-element");
 }
 
 document.getElementById("menu-close").onmouseover = function(evt) {
@@ -28,9 +34,10 @@ document.getElementById("menu-close").onmouseout = function (evt) {
 
 document.getElementById("menu-close").onclick = function () {
     document.getElementById("menu").style.height = "0%";
+    document.getElementById("main-content").classList.remove("blur-element");
+    document.getElementById("menu-holder").classList.remove("blur-element");
 
     setTimeout(function () {
         document.getElementsByTagName("body")[0].style.overflow = "auto";
     }, 300);
 }
-
